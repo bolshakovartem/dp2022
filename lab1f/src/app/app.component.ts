@@ -19,4 +19,12 @@ export class AppComponent {
       }
     )
   }
+  addAnimal(animal:Animal){
+    this.service.postAnimals(animal).subscribe(
+      (animal)=>{
+        console.log(animal);
+        this.getAnimals();
+      }
+    )
+  }
 }

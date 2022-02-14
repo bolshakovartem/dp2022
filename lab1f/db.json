@@ -1,0 +1,9 @@
+{
+    "Animal":[
+        {
+            "title":"Tiger", 
+            "age":10, 
+            "info":"The tiger is the largest living cat species. It is most recognisable for its dark vertical stripes on orange fur with a white underside" 
+        }
+    ]
+}
