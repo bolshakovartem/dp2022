@@ -13,3 +13,14 @@
     Info: {{ani.info}}
   </li>
 </ul>
+
+<h3>Add animal</h3>
+<form #form1="ngForm" (ngSubmit)="addAnimal(form1.value)">
+  <input type="text" name="title" value="" ngModel>
+  <br>
+  <input type="number" name="age" value="0" ngModel>
+  <br>
+  <input type="text" name="info" value="" ngModel>
+  <br>
+  <input type="submit" value="Add Animal">
+</form>
