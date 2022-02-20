@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../interfaces/user';
-import { UserService } from '../services/user.service';
+import { Animals } from '../interfaces/animals';
+import { AnimalService } from '../services/animal.service';
 
 @Component({
   selector: 'app-list',
@@ -9,49 +9,48 @@ import { UserService } from '../services/user.service';
 })
 export class ListComponent implements OnInit {
 
-  title:string="List of Users";
-  usersList:IUser[]=[];
+  title:string="List of Animals";
+  animalsList:Animals[]=[];
   showAddForm:boolean=false;
-  selectedUser?:IUser;
+  selectedAnimal?:Animals;
 
 
-  constructor(private service:UserService) { }
+  constructor(private service:AnimalService) { }
 
   ngOnInit(): void {
-    this.updateUsers();
+    this.updateAnimals();
   }
 
-  updateUsers(){
-    this.service.getUsers().subscribe(
-      (users)=>{
-        this.usersList=users;
-        this.service.setList(users);
+  updateAnimals(){
+    this.service.getAnimals().subscribe(
+      (animals)=>{
+        this.animalsList=animals;
+        this.service.setList(animals);
       }
     );
   }
 
-  addUser(user:IUser){
-    this.service.postUser(user).subscribe(
-      (user)=>{
-        // console.log(user);
-        this.updateUsers();
+  addAnimal(animal:Animals){
+    this.service.postAnimals(animal).subscribe(
+      (animal)=>{
+        this.updateAnimals();
       }
     );
   }
 
-  onSelect(user:IUser){
-    console.log(user);
-    if(this.selectedUser && user.id==this.selectedUser.id){
-      this.selectedUser=undefined;
+  onSelect(animal:Animals){
+    console.log(animal);
+    if(this.selectedAnimal && animal.title==this.selectedAnimal.title){
+      this.selectedAnimal=undefined;
     } else {
-      this.selectedUser=user;
+      this.selectedAnimal=animal;
     }
   }
 
-  deleteUser(user:IUser){
-    this.service.deleteUser(user).subscribe(
+  deleteAnimal(animal:Animals){
+    this.service.deleteAnimals(animal).subscribe(
       ()=>{
-        this.updateUsers();
+        this.updateAnimals();
       }
     );
   }

@@ -1,8 +1,8 @@
-<div *ngIf="user">
-<h3>Update User</h3>
-
-<input type="hidden" [(ngModel)]="user.id">
-<input type="text" [(ngModel)]="user.name"><br><br>
-<input type="number" [(ngModel)]="user.age"><br><br>
-<button (click)="updateUser()">Update user</button>
-</div>
+<div *ngIf="animal">
+    <h3>Update animal</h3>
+    
+    <input type="text" [(ngModel)]="animal.title"><br><br> 
+    <input type="number" [(ngModel)]="animal.age"><br><br>
+    <input type="text" [(ngModel)]="animal.info"><br><br> 
+    <button (click)="updateAnimal()">Update animal</button>
+    </div>

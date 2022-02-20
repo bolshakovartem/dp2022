@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IUser } from '../interfaces/user';
-import { UserService } from '../services/user.service';
+import { Animals } from '../interfaces/animals';
+import { AnimalService } from '../services/animal.service';
 
 @Component({
   selector: 'app-update',
@@ -9,17 +9,17 @@ import { UserService } from '../services/user.service';
 })
 export class UpdateComponent implements OnInit {
 
-  @Input() user?:IUser
+  @Input() animal?:Animals
   @Output() updated:EventEmitter<null>= new EventEmitter();
-  constructor(private service:UserService) { }
+  constructor(private service:AnimalService) { }
 
   ngOnInit(): void {
   }
 
-  updateUser(){
-    if(this.user) {
-      console.log(this.user);
-      this.service.putUser(this.user).subscribe(
+  updateAnimal(){
+    if(this.animal) {
+      console.log(this.animal);
+      this.service.putAnimals(this.animal).subscribe(
       ()=>{
         this.updated.emit();        
       }

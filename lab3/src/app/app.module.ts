@@ -4,10 +4,16 @@ import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateComponent } from './update/update.component';
+import { ListComponent } from './list/list.component';
+import { List2Component } from './list2/list2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UpdateComponent,
+    ListComponent,
+    List2Component,
   ],
   imports: [
     BrowserModule,
