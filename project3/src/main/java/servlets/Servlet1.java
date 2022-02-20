@@ -42,7 +42,7 @@ public class Servlet1 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		setAccessControlHeaders(response);
-		
+		Animal animal = Helpers.animalParse(request);
 		doGet(request, response);
 	}
 
